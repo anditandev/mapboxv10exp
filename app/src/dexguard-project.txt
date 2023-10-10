@@ -1,0 +1,28 @@
+-verbose
+-obfuscatecode class com.example.mapboxv10test.**
+
+// Enabling this will fix the issue, but not optimal
+# -optimizations !library/gson
+
+-keep class * { *; }
+-keepattributes *
+
+-keepresources */*
+-keepresourcefiles res/**
+-keepresourcefiles assets/**
+-keepresourcefiles lib/**
+-keepresourcexmlelements **
+-keepresourcexmlattributenames **
+
+-raspchecks apktamper,hook,filetamper,virtualenvironment
+
+-raspaggressiveness hook high
+-raspaggressiveness apktamper high
+-raspaggressiveness filetamper high
+-raspaggressiveness virtualenvironment high
+
+-raspcontinueon none
+
+-keepclasseswithmembernames,includedescriptorclasses class * {
+    native <methods>;
+}
