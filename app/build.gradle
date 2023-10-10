@@ -86,3 +86,18 @@ dependencies {
     //Mapbox
     implementation 'com.mapbox.maps:android:10.14.1'
 }
+
+dexguard {
+    path='../../dexguard'
+    license = '../../dexguard/lib/dexguard-license.txt'
+    configurations {
+        release {
+            defaultConfiguration 'dexguard-release.pro'
+            defaultConfiguration 'dexguard-gson.pro'
+            defaultConfiguration 'dexguard-rasp.pro'
+
+            configuration 'dexguard-project.txt'
+            configuration 'proguard-rules.pro'
+        }
+    }
+}
